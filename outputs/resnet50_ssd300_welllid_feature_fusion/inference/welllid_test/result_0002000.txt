@@ -1,0 +1,5 @@
+mAP: 0.2424
+circle          : 0.0411
+good            : 0.3595
+lose            : 0.4103
+uncovered       : 0.4013
