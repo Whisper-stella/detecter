@@ -23,7 +23,7 @@ _C.MODEL.BACKBONE.PRETRAINED = True
 
 # Resnet
 _C.MODEL.RESNET = CN()
-_C.MODEL.RESNET.SE = True
+_C.MODEL.RESNET.SE = False
 _C.MODEL.RESNET.CBAM = False
 _C.MODEL.RESNET.FUSION = False
 _C.MODEL.RESNET.BLOCKS = [3, 4, 6, 3]
@@ -73,7 +73,7 @@ _C.DATASETS.TEST = ()
 # -----------------------------------------------------------------------------
 _C.DATA_LOADER = CN()
 # Number of data loading threads
-_C.DATA_LOADER.NUM_WORKERS = 8
+_C.DATA_LOADER.NUM_WORKERS = 2
 _C.DATA_LOADER.PIN_MEMORY = True
 
 # ---------------------------------------------------------------------------- #
