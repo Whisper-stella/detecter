@@ -44,6 +44,10 @@ def train(cfg, args):
     arguments.update(extra_checkpoint_data)
 
     max_iter = cfg.SOLVER.MAX_ITER // args.num_gpus
+
+    print("sfrgsv")
+    print(arguments['iteration'])
+
     train_loader = make_data_loader(cfg, is_train=True, distributed=args.distributed, max_iter=max_iter, start_iter=arguments['iteration'])
 
     model = do_train(cfg, model, train_loader, optimizer, scheduler, checkpointer, device, arguments, args)
@@ -78,7 +82,7 @@ def main():
     )
     args = parser.parse_args()
     num_gpus = int(os.environ["WORLD_SIZE"]) if "WORLD_SIZE" in os.environ else 1
-    args.distributed = num_gpus > 1
+    args.distributed = num_gpus > 1 
     args.num_gpus = num_gpus
 
     print("cuda?")
